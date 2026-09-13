@@ -1,4 +1,8 @@
 name :- Ahishek Gavane
 Role :- Devops Engineer
 Age :-24
-Version:- V1
+<<<<<<< HEAD
+Version:- v1
+=======
+Version:- 1.0
+>>>>>>> feature/config
