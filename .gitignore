@@ -1,0 +1,5 @@
+ll .log files
+*.tmp         → ignore all .tmp files
+node_modules/ → ignore this directory
+__pycache__/  → ignore Python cache
+*.class       → ignore Java compiled filesa
