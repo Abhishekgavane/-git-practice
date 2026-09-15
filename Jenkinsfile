@@ -6,78 +6,22 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
         stage('Build') {
             steps {
-                sh '''
-                    echo "Build started"
-                    hostname
-                    whoami
-                    ls -la
-                '''
+                echo 'Building application'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running tests...'
+                echo 'Testing application'
             }
         }
-    }
 
-    post {
-        success {
-            echo 'Pipeline completed successfully!'
-        }
-
-        failure {
-            echo 'Pipeline failed!'
-        }
-    }
-}pipeline {
-
-    agent {
-        label 'Vinod'
-    }
-
-    stages {
-
-        stage('Checkout') {
+        stage('Deploy') {
             steps {
-                checkout scm
+                echo 'Deploying application'
             }
-        }
-
-        stage('Build') {
-            steps {
-                sh '''
-                    echo "Build started"
-                    hostname
-                    whoami
-                    ls -la
-                '''
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-            }
-        }
-    }
-
-    post {
-        success {
-            echo 'Pipeline completed successfully!'
-        }
-
-        failure {
-            echo 'Pipeline failed!'
         }
     }
 }
